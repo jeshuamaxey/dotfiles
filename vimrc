@@ -19,4 +19,24 @@ set expandtab             " use spaces instead of tabs
 set smarttab              " use tabs at the start of a line, spaces elsewhere
 "set nowrap               " don't wrap text
 
+" setup vim as ideal git commit message editor
 autocmd Filetype gitcommit setlocal spell textwidth=72 " limit linewidth in git commit messages
+
+" vim-plug
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin()
+
+"Plug 'tpope/vim-sensible'
+
+Plug Quramy/tsuquyomi
+
+" On-demand loading
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+call plug#end()

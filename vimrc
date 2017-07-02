@@ -34,7 +34,7 @@ call plug#begin()
 
 "Plug 'tpope/vim-sensible'
 
-Plug Quramy/tsuquyomi
+"Plug Quramy/tsuquyomi
 
 " On-demand loading
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }

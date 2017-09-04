@@ -48,3 +48,6 @@ fi
 
 # configure git auto complete to work with alias (must be run after loading bash completion plugin)
 __git_complete g __git_main
+
+# configure pyenv - this manages python versions
+eval "$(pyenv init -)"

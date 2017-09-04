@@ -30,6 +30,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+let g:loaded_logipat = 1
+
 call plug#begin()
 
 "Plug 'tpope/vim-sensible'
@@ -40,3 +42,4 @@ call plug#begin()
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
+

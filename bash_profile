@@ -5,12 +5,6 @@ for file in ~/.{aliases,bash_prompt,bashrc,exports,extra,functions,git-completio
 done
 unset file
 
-# init z   https://github.com/rupa/z
-#. ~/code/z/z.sh
-
-# init rvm
-#source ~/.rvm/scripts/rvm
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
@@ -25,13 +19,14 @@ export LANG="en_US"
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
-export NVM_DIR="/Users/jeshuamaxey/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/jeshuamaxey/code/y/google-cloud-sdk/path.bash.inc'
+# load nvm
+export NVM_DIR="~/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# The next line enables bash completion for gcloud.
-source '/Users/jeshuamaxey/code/y/google-cloud-sdk/completion.bash.inc'
+# update PATH for the Google Cloud SDK.
+if [ -f '/Users/jeshuamaxey/code/google-cloud-sdk/path.bash.inc' ]; then source '/Users/jeshuamaxey/code/google-cloud-sdk/path.bash.inc'; fi
+# enable bash completion for gcloud.
+if [ -f '/Users/jeshuamaxey/code/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/jeshuamaxey/code/google-cloud-sdk/completion.bash.inc'; fi
 
 # Bash completion plugin
 if [ -f $(brew --prefix)/etc/bash_completion ]; then

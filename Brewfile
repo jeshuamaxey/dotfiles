@@ -46,6 +46,7 @@ brew 'trash'
 brew 'tree'
 brew 'octave'
 brew 'postgresql'
+brew 'python3'
 brew 'wget'
 
 # Apps

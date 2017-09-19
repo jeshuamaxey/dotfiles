@@ -1,6 +1,6 @@
 # Load ~/.aliases, ~/.bash_prompt, ~/.bashrc, ~/.exports, ~/.extra, ~/.functions, ~/.osx NOT ~/.inputrc
 # ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{aliases,bash_prompt,bashrc,exports,extra,functions,git-completion,osx,cytora}; do
+for file in ~/.{aliases,bash_prompt,bashrc,exports,extra,functions,osx}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
@@ -19,6 +19,11 @@ export LANG="en_US"
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
+# configure git auto completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
 # load nvm
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -33,6 +38,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
 
+# configure git auto complete to work with alias (must be run after loading bash completion plugin)
+__git_complete g __git_main
+
 # load virtualenvwrapper for python (after custom PATHs)
 venvwrap="virtualenvwrapper.sh"
 /usr/bin/which -s $venvwrap
@@ -40,9 +48,6 @@ if [ $? -eq 0 ]; then
     venvwrap=`/usr/bin/which $venvwrap`
     source $venvwrap
 fi
-
-# configure git auto complete to work with alias (must be run after loading bash completion plugin)
-__git_complete g __git_main
 
 # configure pyenv - this manages python versions
 eval "$(pyenv init -)"

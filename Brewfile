@@ -19,6 +19,7 @@ brew 'findutils'
 brew 'bash'
 
 # Install Binaries
+brew 'bash-completion'
 brew 'cowsay'
 brew 'curl'
 brew 'epstool'

@@ -7,7 +7,7 @@ dir=~/dotfiles
 # old dotfiles backup directory
 olddir=~/old_dotfiles
 # list of files/folders to symlink in homedir
-files="bash_profile bash_prompt exports aliases extra functions bashrc vimrc inputrc octaverc cytora mackup.cfg"
+files="bash_profile bash_prompt exports aliases extra functions bashrc vimrc inputrc octaverc mackup.cfg"
 
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."

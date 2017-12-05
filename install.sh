@@ -18,6 +18,13 @@ brew tap homebrew/bundle
 brew bundle
 
 echo "brew installs done."
+echo ""
+echo "+---------------------------------------------------+"
+echo "| to install skyfonts, run the installer at:        |"
+echo "| /usr/local/Caskroom/skyfonts/5.9.1.0/SkyFonts.app |"
+echo "+---------------------------------------------------+"
+echo ""
+
 
 echo "installing node version manager (nvm)..."
 export NVM_DIR="$HOME/.nvm" && (

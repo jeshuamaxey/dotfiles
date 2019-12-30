@@ -11,6 +11,8 @@ alias -- -="cd -"
 alias st='open -a "Sublime Text"'
 alias st2='open -a "Sublime Text"'
 
+alias code='open -a "Visual Studio Code"'
+
 alias ia='open -a iA\ Writer'
 alias haroo='open -a Haroopad'
 

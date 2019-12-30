@@ -51,3 +51,6 @@ fi
 
 # configure pyenv - this manages python versions
 eval "$(pyenv init -)"
+
+
+export GOPATH=$HOME/go

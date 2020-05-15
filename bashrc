@@ -23,11 +23,12 @@ export PATH="/Users/jeshua/Library/Haskell/bin:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# ruby
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # symlink to get neo4j to use the right version of java
-export JAVA_HOME=/Library/Internet-Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+# export JAVA_HOME=/Library/Internet-Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
 
 export NVM_DIR="/Users/jeshuamaxey/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/__tabtab.bash ] && . ~/.config/tabtab/__tabtab.bash || true

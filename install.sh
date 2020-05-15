@@ -7,7 +7,8 @@ echo "installing apps and utils with homebrew..."
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo "installing homebrew first"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Update Homebrew recipes
@@ -38,9 +39,17 @@ echo "nvm installed."
 # install useful npm packages globally
 echo "installing apps and utils with npm..."
 
-npm i -g nodemon
+npm i -g yarn nodemon
 
 echo "npm installs done."
+
+echo "installing AWS CLI."
+
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "/tmp/AWSCLIV2.pkg"
+installer -pkg /tmp/AWSCLIV2.pkg -target /
+rm "/tmp/AWSCLIV2.pkg"
+
+echo "AWS CLI installed."
 
 # must go last
 # install glcoud sdk

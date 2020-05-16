@@ -3,6 +3,13 @@
 # Ask for the administrator password upfront
 sudo -v
 
+
+# Check for Homebrew and install if we don't have it
+# if test ! $(which brew); then
+#   echo "installing oh my zsh"
+#   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# fi
+
 echo "installing apps and utils with homebrew..."
 
 # Check for Homebrew and install if we don't have it
@@ -65,3 +72,12 @@ echo "| to install, run:                          |"
 echo "| ~/code/google-cloud-sdk/install.sh        |"
 echo "+-------------------------------------------+"
 echo ""
+
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts

@@ -34,50 +34,9 @@ echo "+---------------------------------------------------+"
 echo ""
 
 
-echo "installing node version manager (nvm)..."
-export NVM_DIR="$HOME/.nvm" && (
-  git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-  cd "$NVM_DIR"
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-) && . "$NVM_DIR/nvm.sh"
-
-echo "nvm installed."
-
 # install useful npm packages globally
 echo "installing apps and utils with npm..."
 
 npm i -g yarn nodemon
 
 echo "npm installs done."
-
-echo "installing AWS CLI."
-
-curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "/tmp/AWSCLIV2.pkg"
-installer -pkg /tmp/AWSCLIV2.pkg -target /
-rm "/tmp/AWSCLIV2.pkg"
-
-echo "AWS CLI installed."
-
-# must go last
-# install glcoud sdk
-echo "Downloading gcloud-sdk..."
-
-curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-171.0.0-darwin-x86_64.tar.gz -o ~/code/gcloud-sdk.tar.gz
-tar zxvf ~/code/gcloud-sdk.tar.gz -C ~/code/
-
-echo ""
-echo "+-------------------------------------------+"
-echo "| gcloud-sdk downloaded                     |"
-echo "| to install, run:                          |"
-echo "| ~/code/google-cloud-sdk/install.sh        |"
-echo "+-------------------------------------------+"
-echo ""
-
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts

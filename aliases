@@ -80,3 +80,6 @@ alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true"
 
 # amazing weather reports in the terminal
 alias weather="curl wttr.in"
+
+# generate a random uuid lowercase
+alias uuidgen='uuidgen | tr A-F a-f'

@@ -39,8 +39,6 @@ cask 'iterm2'
 cask 'slack'
 cask 'spotify'
 cask 'vlc'
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
 cask 'visual-studio-code'
 
 # Quicklook
